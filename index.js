@@ -14,3 +14,7 @@ modal.show();
 function showNote(){
     modal.show();
 }
+
+function sidebarSwitcher(element){
+    alert(element.textContent);
+}
