@@ -16,7 +16,7 @@ function showNote(){
 }
 
 const topTabs = [
-    {title: "Dashboard", icon: "dashboard_icon"},
+    {title: "Dashboard", icon: "dashboard_icon", click: "dashboard()"},
     {title: "People", icon: "people_icon"},
     {title: "Services and Packages", icon: "package_icon"},
     {title: "Transactions", icon: "transactions_icon"},
@@ -27,6 +27,16 @@ const topTabs = [
 const bottomTabs = [
     {title: "Settings", icon: "settings_icon"},
     {title: "Logout", icon: "logout_icon", click: "showNote()"},
+];
+const pages = [
+    "dashboard",
+    "people",
+    "servicesandpackages",
+    "transactions",
+    "billing",
+    "reports",
+    "activityrecord",
+    "settings"
 ];
 
 const topSidebar = document.querySelector(".topsidebar");
@@ -55,4 +65,11 @@ for (let a = 0; a < bottomTabs.length; a++){
     <img src="${bottomTabs[a].icon}.png" alt="${bottomTabs[a].icon}" class="width-24px height-24px">
     <p class="margin-0">${bottomTabs[a].title}</p>`;
     bottomSidebar.appendChild(div);
+}
+
+function dashboard(){
+    for (let a = 0; a < pages.length; a++){
+        document.querySelector("." + pages[a]).classList.add("display-none");
+    }
+    document.querySelector(".dashboard").classList.remove("display-none");
 }
